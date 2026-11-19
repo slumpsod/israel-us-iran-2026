@@ -50,7 +50,8 @@ ul,ol{padding-left:20px}
 table{width:100%;border-collapse:collapse;font-size:13.5px;display:block;overflow-x:auto}
 td a,th a,.cite{word-break:break-all}
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:6px 0;padding-bottom:4px}
-table{min-width:100%}
+table{min-width:100%;width:max-content}
+@media print{table{width:100%}}
 td,th{max-width:44ch}
 th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left}
 th{background:var(--panel2)}
