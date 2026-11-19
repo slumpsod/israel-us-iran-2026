@@ -36,7 +36,7 @@ input[type=search]{flex:1 1 240px;min-width:180px;background:var(--panel);border
 main,article,.panel,#doc{min-width:0}
 #wrap>main{margin:0;width:100%}
 img,svg{max-width:100%}
-@media(max-width:900px){#wrap{grid-template-columns:minmax(0,1fr);gap:12px}article,.panel{overflow-x:hidden}.led{grid-template-columns:minmax(0,1fr)}.tl div{grid-template-columns:minmax(0,84px) minmax(0,1fr)}#prep label{flex-wrap:wrap}}
+@media(max-width:900px){#wrap{grid-template-columns:minmax(0,1fr);gap:12px}article,.panel{overflow-x:hidden}}
 nav{position:sticky;top:12px;align-self:start;max-height:88vh;overflow:auto}
 @media(max-width:900px){nav{position:static;max-height:none;display:flex;flex-wrap:wrap;gap:6px}}
 nav h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin:14px 0 4px}
@@ -65,22 +65,22 @@ article .head{display:flex;justify-content:space-between;align-items:baseline;ga
 mark{background:var(--accent);color:#101418;border-radius:3px}
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:14px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:12px}
-.bar{display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr) 46px;gap:8px;align-items:center;margin:4px 0;cursor:default}
+.bar{display:grid;grid-template-columns:minmax(112px,26%) minmax(0,1fr) 44px;gap:8px;align-items:center;margin:4px 0;cursor:default}
 .bar i{height:15px;background:linear-gradient(90deg,var(--d),var(--accent));border-radius:3px;display:block}
 .bar b{color:var(--dim);font-weight:600;font-size:13px}
 .bar s{text-align:right;font-variant-numeric:tabular-nums;font-size:13px}
 .up{color:var(--v)}.down{color:var(--r)}
 .tl{display:grid;gap:6px}
-.tl div{display:grid;grid-template-columns:minmax(0,104px) minmax(0,1fr);gap:10px;padding:6px 0;border-top:1px solid var(--line)}
+.tl div{display:grid;grid-template-columns:minmax(88px,104px) minmax(0,1fr);gap:10px;padding:6px 0;border-top:1px solid var(--line)}
 .tl time{color:var(--accent);font-size:13px;font-weight:600}
 .tl p{margin:0;color:var(--ink);font-size:14.5px}
 .tl .off{display:none}
 .led{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
-.led li{grid-template-columns:minmax(0,1fr) auto}
-.led li b,.led li span,#prep label>span,#knesset .bar b{min-width:0;word-break:break-word}
+.led li{display:grid;grid-template-columns:minmax(124px,34%) minmax(0,1fr);gap:10px;align-items:start}
+.led li b,.led li span,#prep label>span,.bar b,.tl time{min-width:0;word-break:break-word}
 .led .col h3{margin:0 0 8px}
 .led div{list-style:none;padding:0;margin:0}
-.led li{display:grid;grid-template-columns:1fr auto;gap:10px;padding:7px 0;border-top:1px solid var(--line);align-items:start}
+.led li{padding:7px 0;border-top:1px solid var(--line)}
 .led li span{color:var(--dim);font-size:13.5px}
 #prep label{display:flex;gap:9px;align-items:baseline;cursor:pointer;padding:5px 0;border-top:1px solid var(--line)}
 #prep input{width:15px;height:15px}
@@ -90,6 +90,26 @@ kbd{border:1px solid var(--line);border-radius:4px;padding:1px 5px;font:12px ui-
 body[data-one="1"] article:not(.current){display:none}
 body[data-one="1"] nav button:not(.on){opacity:.4}
 @media print{body{background:#fff;color:#111}nav,#pop,#results,.tools,.navi,#prep input{display:none}article,.panel{border:0;box-shadow:none;padding:0;margin:0 0 10px}}
+
+@media(max-width:900px){
+ .led{grid-template-columns:minmax(0,1fr)}
+ .led li{display:block;padding:8px 0;border-top:1px solid var(--line)}
+ .led li b{display:block;margin-bottom:2px}
+ .bar{grid-template-columns:minmax(104px,34%) minmax(0,1fr) 40px}
+ .bar b{font-size:13px}
+ .tl div{grid-template-columns:minmax(84px,96px) minmax(0,1fr)}
+ .grid{grid-template-columns:minmax(0,1fr)}
+ #prep label{flex-wrap:wrap}
+ table{font-size:13px}
+ th,td{padding:4px 6px}
+}
+@media(max-width:560px){
+ .bar{grid-template-columns:minmax(96px,46%) minmax(0,1fr) 34px}
+ .bar b{font-size:12.5px}
+ .tl div{grid-template-columns:minmax(76px,88px) minmax(0,1fr)}
+ .tl time{font-size:12.5px}
+ .led{grid-template-columns:minmax(0,1fr)}
+}
 </style></head>
 <body data-one="0">
 <header>
